@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kairen Socials</title>
+    <link rel="stylesheet" href="https://unpkg.com/98.css">
+    <style>
+        body {
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="window" style="width: 300px;">
+        <div class="title-bar">
+            <div class="title-bar-text">Kairen Socials</div>
+            <div class="title-bar-controls">
+                <button aria-label="Close"></button>
+            </div>
+        </div>
+        <div class="window-body">
+            <p>Would you like to enter the Kairen Socials Page?</p>
+            <button id="yesBtn">Yes, please!</button>
+            <button id="noBtn">No, thanks.</button>
+            <div id="response" style="margin-top: 20px;"></div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('yesBtn').addEventListener('click', function() {
+            document.getElementById('response').innerHTML = `
+                <p>Great! Would you like to choose 'Discord' or 'Website'?</p>
+                <button id="discordBtn">Discord</button>
+                <button id="websiteBtn">Website</button>
+            `;
+
+            document.getElementById('discordBtn').addEventListener('click', function() {
+                document.getElementById('response').innerHTML = `<p>Booting up..</p>`;
+                setTimeout(() => {
+                    document.getElementById('response').innerHTML += `<p>Booted up!</p>`;
+                    setTimeout(() => {
+                        window.open('https://dsc.gg/kairen', '_blank');
+                    }, 2000);
+                }, 3000);
+            });
+
+            document.getElementById('websiteBtn').addEventListener('click', function() {
+                document.getElementById('response').innerHTML = `<p>Alright, let’s go!</p>`;
+                setTimeout(() => {
+                    document.getElementById('response').innerHTML += `<p>Booting up..</p>`;
+                    setTimeout(() => {
+                        document.getElementById('response').innerHTML += `<p>Booted up!</p>`;
+                        setTimeout(() => {
+                            window.open('https://zaap.bio/kairen', '_blank');
+                        }, 2000);
+                    }, 3000);
+                }, 1000);
+            });
+        });
+
+        document.getElementById('noBtn').addEventListener('click', function() {
+            document.getElementById('response').innerHTML = `<p>Aw man.. well, have a nice day!</p>`;
+            setTimeout(() => {
+                document.getElementById('response').innerHTML = ``;
+            }, 5000);
+        });
+    </script>
+</body>
+</html>
