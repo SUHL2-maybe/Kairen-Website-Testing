@@ -8,6 +8,11 @@
     <style>
         body {
             margin: 20px;
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/a/a5/Windows_98_Default_Wallpaper.png');
+            background-size: cover;
+        }
+        .refresh-btn {
+            margin-top: 10px;
         }
     </style>
 </head>
@@ -24,6 +29,7 @@
             <button id="yesBtn">Yes, please!</button>
             <button id="noBtn">No, thanks.</button>
             <div id="response" style="margin-top: 20px;"></div>
+            <button class="refresh-btn" onclick="location.reload();">Refresh Page</button>
         </div>
     </div>
 
@@ -62,7 +68,7 @@
         document.getElementById('noBtn').addEventListener('click', function() {
             document.getElementById('response').innerHTML = `<p>Aw man.. well, have a nice day!</p>`;
             setTimeout(() => {
-                document.getElementById('response').innerHTML = ``;
+                window.location.href = 'https://www.google.com/search?q=You+selected+%22No%2C+thanks.%22%2C+go+ahead+and+do+what+you+want%21&sca_esv=3cf5305f7235dc23&rlz=1C9BKJA_enAE1096AE1097&hl=en-US&sxsrf=ADLYWILa9Hj0oDcHunqxSAK_alJB4lZYsw%3A1715980360343&ei=SMhHZqXDFI2Gxc8PqYSBQA&oq=You+selected+%22No%2C+thanks.%22%2C+go+ahead+and+do+what+you+want%21&gs_lp=EhNtb2JpbGUtZ3dzLXdpei1zZXJwIjpZb3Ugc2VsZWN0ZWQgIk5vLCB0aGFua3MuIiwgZ28gYWhlYWQgYW5kIGRvIHdoYXQgeW91IHdhbnQhMgUQIRigATIFECEYoAFIuUtQkgdYtEhwA3gBkAEBmAG1BaABgk2qAQoyLTI3LjMuMS4yuAEDyAEA-AEBmAIfoALLP8ICChAAGLADGNYEGEfCAgcQIxgnGK4CwgIHECEYoAEYCsICBBAhGBXCAggQABiiBBiJBZgDAIgGAZAGCJIHCjMuMC4yNC4yLjKgB-s2&sclient=mobile-gws-wiz-serp';
             }, 5000);
         });
     </script>
